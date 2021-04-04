@@ -87,7 +87,7 @@ public class InvoiceDAO implements InvoiceTable, WebPage {
                 } else {
                     sOut += WebPage.padStr (sDesc, 30);
                 }
-                sOut += "</samp><br>";
+                sOut += "</samp><hr>";
             }
         } catch (SQLException e) {
         } finally {

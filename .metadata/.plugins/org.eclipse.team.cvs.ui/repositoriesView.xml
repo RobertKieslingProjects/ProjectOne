@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <repositories-view>
+	<repository id=":pserver:rkiesling@alder:/var/cvs">
+		<module path="/" lastAcessTime="1617549829142">
+		</module>
+	</repository>
 </repositories-view>

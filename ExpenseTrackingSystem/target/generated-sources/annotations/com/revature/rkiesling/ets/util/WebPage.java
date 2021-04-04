@@ -179,6 +179,7 @@ public interface WebPage {
 
     public static String viewHeading (String userid, String approved) {
         String s = "";
+        s += "<html><body style=\"background: #888; color: white\"><font " + classMonospace + ">";
         if (Integer.parseInt (approved) == InvoiceTable.STATUS_PENDING_APPROVAL) {
             s += "<h2>Pending Invoices for <font " + classMonospace + ">" + userid + "</font></h2>";
         } else if (Integer.parseInt (approved) == InvoiceTable.STATUS_APPROVED) {
