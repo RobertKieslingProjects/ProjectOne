@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/home/rkiesling/builds/java/ets-ws/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1318808862.index
+822802545.index
+3434363414.index
+1120132987.index
+3574592462.index
+2860828468.index

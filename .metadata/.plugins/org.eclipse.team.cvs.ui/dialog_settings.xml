@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.team.ccvs.ui.RepositoriesView">
+		<item key="selectedOrderBy" value="0"/>
+		<item key="selectedSortingOrder" value="true"/>
+	</section>
+	<section name="SharingWizard">
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_USERNAME_ID">
+			<item value="rkiesling"/>
+		</list>
+		<list key="ConfigurationWizardMainPage.STORE_HOSTNAME_ID">
+			<item value="alder"/>
+		</list>
+		<list key="ConfigurationWizardMainPage.STORE_PATH_ID">
+			<item value="/var/cvs"/>
+		</list>
+	</section>
+</section>
