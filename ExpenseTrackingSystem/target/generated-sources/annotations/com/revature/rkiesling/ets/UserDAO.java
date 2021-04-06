@@ -22,14 +22,15 @@ public class UserDAO implements UserTable, Role {
 
         String sql = "insert into "
             + UserTable.tableName
-            + "(firstname, lastname, userid, password, ssn, role) "
+            + "(firstname, lastname, userid, password, ssn, role, email) "
             + "values ("
             + "\'" + u.firstName () + "',"
             + "\'" + u.lastName () + "',"
             + "\'" + u.userid () + "',"
             + "\'" + u.password () + "',"
             + "\'" + u.SSN () + "',"
-            + u.role () + ")";
+            + u.role ()  + ","  
+	    + "\'" + u.email () + "')";
         try {
             s = c.createStatement ();
             Integer nrows = s.executeUpdate (sql);
@@ -62,6 +63,7 @@ public class UserDAO implements UserTable, Role {
                                   r.getString ("userid"),
                                   r.getString ("password"),
                                   r.getString ("SSN"),
+                                  r.getString ("email"),
                                   r.getInt ("role"));
                 }
             }
@@ -70,9 +72,6 @@ public class UserDAO implements UserTable, Role {
         } finally {
             JDBCConnection.closeAll (c, p, r);
         }
-        // if (u == null) {
-           // throw new UserNotFoundException ("User name or password invalid.");
-        //}
         return u;
             
     }
