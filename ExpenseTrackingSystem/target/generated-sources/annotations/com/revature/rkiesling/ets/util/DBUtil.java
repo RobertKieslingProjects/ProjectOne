@@ -142,9 +142,9 @@ public class DBUtil implements UserTable, InvoiceTable {
             c = JDBCConnection.getJDBCConnection ();
 
             String sql = "insert into " + UserTable.tableName +
-                " (firstname, lastname, userid, password, ssn, role)" +
+                " (firstname, lastname, userid, password, ssn, role, email)" +
                 " values ('adminFirstName', 'adminLastName', 'admin', " +
-                "'admin', '111-11-1111', " + Role.ROLE_ADMIN + ")";
+                "'admin', '111-11-1111', " + Role.ROLE_ADMIN + ", 'admin@ets.local')";
                                                                         
             p = c.prepareStatement(sql);
 

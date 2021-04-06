@@ -14,7 +14,8 @@ public interface UserTable {
                            "userid",
                            "password",
                            "ssn",
-                           "role"));
+                           "role",
+			   "email"));
     // Used when we construct the query to create the
     // table.
     public static final ArrayList<String> colDefs =
@@ -25,5 +26,6 @@ public interface UserTable {
                            "userid varchar (64) not null unique,",
                            "password varchar (64) not null,",
                            "ssn varchar (12) not null,",
-                           "role int not null)"));
+                           "role int not null,",
+			   "email varchar (128))"));
 }
