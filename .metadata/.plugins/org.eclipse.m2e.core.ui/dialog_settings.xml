@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/home/rkiesling/builds/java/ets-ws/ExpenseTrackingSystem/target/generated-sources/annotations/com/revature/rkiesling/ets"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -25,12 +26,14 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.revature.rkiesling.ets.UserInfoUpdate"/>
 			<item value="com.revature.rkiesling.ets.ExpenseTracking"/>
 		</list>
 		<list key="groupId">
 			<item value="com.revature.rkiesling.ets"/>
 		</list>
 		<list key="artifactId">
+			<item value="UserInfoUpdate"/>
 			<item value="ExpenseTracking"/>
 		</list>
 		<list key="projectNameTemplate">

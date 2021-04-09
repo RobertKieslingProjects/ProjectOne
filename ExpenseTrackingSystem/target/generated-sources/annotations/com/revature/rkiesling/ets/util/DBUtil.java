@@ -86,9 +86,11 @@ public class DBUtil implements UserTable, InvoiceTable {
                 
             query.insert(0, "create table " +
                          UserTable.tableName + " (");
+	    System.out.println (query.toString ());
             for (String spec: UserTable.colDefs) {
                 query.append(spec);
             }
+	    System.out.println (query.toString ());
             p = c.prepareStatement(query.toString());
             try {
                 p.executeUpdate ();
@@ -142,9 +144,9 @@ public class DBUtil implements UserTable, InvoiceTable {
             c = JDBCConnection.getJDBCConnection ();
 
             String sql = "insert into " + UserTable.tableName +
-                " (firstname, lastname, userid, password, ssn, role, email)" +
+                " (firstname, lastname, userid, password, ssn, role)" +
                 " values ('adminFirstName', 'adminLastName', 'admin', " +
-                "'admin', '111-11-1111', " + Role.ROLE_ADMIN + ", 'admin@ets.local')";
+                "'admin', '111-11-1111', " + Role.ROLE_ADMIN + ")";
                                                                         
             p = c.prepareStatement(sql);
 

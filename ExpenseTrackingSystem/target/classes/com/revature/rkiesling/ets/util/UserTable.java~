@@ -27,5 +27,5 @@ public interface UserTable {
                            "password varchar (64) not null,",
                            "ssn varchar (12) not null,",
                            "role int not null,",
-			   "email varchar (128))"));
+			   "email varchar(128)"));
 }

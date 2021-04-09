@@ -24,11 +24,14 @@ public class Employee extends HttpServlet implements WebPage {
     }
 
     private String makeWebPage (String title, String firstName, String lastName,
-                                String userid, String base_url) {
+                                String userid, String base_url, String fromUpdate) {
         String s = WebPage.pageHeading (title);
-        // For a more readable, similar version, see index.jsp
         s += "<h2>Add an Expense Claim</h2>";
-        s += "<h5>Welcome, <b>" + firstName + " " + lastName + "</b></h5>";
+	if (fromUpdate != null) {
+	    s += "<h5>Information Updated Successfully</h5>";
+	} else {
+	    s += "<h5>Welcome, <b>" + firstName + " " + lastName + "</b></h5>";
+	}
         s += WebPage.addClaimForm;
 	s += WebPage.userInvoiceViewButtons (userid, firstName, lastName);
         s += "<a href=\"" + base_url + "\" class=\"text-light bg-secondary\"><b>Sign Out<b></a>";
@@ -53,6 +56,7 @@ public class Employee extends HttpServlet implements WebPage {
             StringBuffer URL = request.getRequestURL();
             String baseURL = URL.toString ().substring (0, URL.toString ().length () - 9); // Length of /Expenses
 	    String firstName = "";
+	    String fromUpdate;
 	    if ((firstName = (String)request.getAttribute ("firstName")) == null) {
 		firstName = (String)request.getParameter ("firstName");
 	    }
@@ -64,8 +68,9 @@ public class Employee extends HttpServlet implements WebPage {
 	    if ((userid = (String)request.getAttribute ("userid")) == null) {
 		userid = (String)request.getParameter ("userid");
 	    }
+	    fromUpdate = (String)request.getAttribute ("fromUpdate");
             out.append(makeWebPage ("Expense Documentation System",
-                                    firstName, lastName, userid, baseURL));
+                                    firstName, lastName, userid, baseURL, fromUpdate));
         }
 
 }

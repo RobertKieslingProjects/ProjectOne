@@ -29,7 +29,7 @@ public class UserDAO implements UserTable, Role {
             + "\'" + u.userid () + "',"
             + "\'" + u.password () + "',"
             + "\'" + u.SSN () + "',"
-            + u.role ()  + ","  
+            + u.role () + ","
 	    + "\'" + u.email () + "')";
         try {
             s = c.createStatement ();
@@ -75,4 +75,56 @@ public class UserDAO implements UserTable, Role {
         return u;
             
     }
+
+    public User getUser (String userid) {
+	Connection c = JDBCConnection.getJDBCConnection ();
+	User u = null;
+	ResultSet r = null;
+	PreparedStatement p = null;
+	String sql = "select * from "
+	    + UserTable.tableName
+	    + " where userid = "
+	    + "'" + userid + "'";
+	try {
+	    p = c.prepareStatement (sql);
+	    r = p.executeQuery ();
+	    if (r.next ()) {
+		u = new User (r.getString ("firstname"),
+			      r.getString ("lastname"),
+			      r.getString ("userid"),
+			      r.getString ("password"),
+			      r.getString ("SSN"),
+			      r.getString ("email"),
+			      r.getInt ("role"));
+	    }
+	} catch (SQLException e) {
+	    System.out.println (e.getMessage ());
+	} finally {
+	    JDBCConnection.closeAll (c, p, r);
+	}
+	return u;
+    }
+
+    public static void updateUserInfo (String olduserid,
+				       String newuserid,
+				       String newemail) {
+	Connection c = JDBCConnection.getJDBCConnection ();
+	Statement s = null;
+	String sql = "update "
+	    + UserTable.tableName
+	    + " set userid = '" + newuserid + "', "
+	    + " email = '" + newemail + "' "
+	    + " where userid = "
+	    + "'" + olduserid + "'";
+	try {
+	    s = c.createStatement ();
+	    s.executeUpdate (sql);
+	} catch (SQLException e) {
+	    System.out.println (e.getMessage ());
+	} finally {
+	    JDBCConnection.closeAll (c, s);
+	}
+	    
+    }
+
 }

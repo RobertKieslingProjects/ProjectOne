@@ -153,7 +153,16 @@ public interface WebPage {
             + "    <input type=\"hidden\" name=\"lastName\" value=\"" + lastName + "\">"
             + "    <input type=\"hidden\" name=\"approved\" value=\"1\">"
             + "  </form>"
-            + "  </td></table>"
+            + "  </td><td>"
+	    + "  <td>"
+            + "    <form action=\"UserInfoUpdate\" method=\"POST\">"
+            + "      <button type=\"submit\">Update Your Info</button>"
+            + "      <input type=\"hidden\" name=\"userid\" value=\"" + userid + "\">"
+            + "      <input type=\"hidden\" name=\"firstName\" value=\"" + firstName + "\">"
+            + "      <input type=\"hidden\" name=\"lastName\" value=\"" + lastName + "\">"
+            + "  </form>"
+	    + "  </td>"
+	    + "</table>"
             + "</div>";
             
         return s;
@@ -162,7 +171,7 @@ public interface WebPage {
     static String manageForm =
         "<div class=\"d-grid gap-3 p-2 border border-dark bg-primary text-gray\">" 
         + "<form action=\"Review\" method=\"POST\">"
-        + "  <h6>Review Invoices By</h6>"
+        + "  <h6>Review Invoices</h6>"
         + "    <div class=\"border border-dark gap-6 p-2\">"
         + "      <label for=\"pending\"><b>Pending Requests</b></label>"
         + "      <input type=\"checkbox\" id=\"pending\" name=\"pending\" value=\"pending\"><br>"
@@ -179,6 +188,42 @@ public interface WebPage {
         + "</form>"
         + "</div>";
     
+    static String updateInfoText1 =
+        "<div class=\"d-grid gap-3 p-2 border border-dark bg-primary text-gray\">" 
+        + "<form action=\"UserUpdateAction\" method=\"POST\">"
+        + "  <h6>Update Your Information</h6>"
+        + "    <div class=\"gap-3 pt-2 pb-2\">"
+	+ "      <label for=\"newuserid\" class=\"" + formInputPad + "\">User ID</label>"
+        + "      <input type=\"input\" placeholder=\"User ID\" class=\"form-control\" id=\"newuserid\" name=\"newuserid\" value=\"";
+    static String updateInfoText2 =
+	"\">"
+	+ "      <input type=\"hidden\" name=\"olduserid\" value=\"";
+    static String updateInfoText3 =
+	"\">" 
+        + "    </div>"
+        + "    <div class=\"gap-3 pt-2 pb-2\">"
+	+ "      <label for=\"newemail\" class=\"" + formInputPad + "\">Email Address</label>"
+	+ "      <input type=\"input\" placeholder=\"Email Address\" class=\"form-control\" id=\"newemail\" name=\"newemail\" value=\"";
+    static String updateInfoText4 =
+        "\">"
+        + "    </div>"
+        + "  <br>"
+        + "  <div width=\"50%\" class=\"border border-dark p-2 \">"
+        + "    <button type=\"submit\">Submit Changes</button>"
+        + "  </div>"
+        + "</form>"
+        + "</div>";
+
+    public static String updateInfoForm (String userid, String email) {
+	String s = updateInfoText1;
+	s += userid;
+	s += updateInfoText2;
+	s += userid;
+	s += updateInfoText3;
+	s += email;
+	s += updateInfoText4;
+	return s;
+    }
 
     public static String viewHeading (String userid, String approved) {
         String s = "";

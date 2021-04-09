@@ -1,5 +1,7 @@
 INDEX VERSION 1.131
 /home/rkiesling/builds/java/ets-ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/696176715.index
 /ExpenseTracking/src/main/resources
+/home/rkiesling/builds/java/ets-ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2024784373.index
+/UserInfoUpdate/src/main/resources
 /home/rkiesling/builds/java/ets-ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1893117136.index
 /ExpenseTrackingSystem/src/main/resources

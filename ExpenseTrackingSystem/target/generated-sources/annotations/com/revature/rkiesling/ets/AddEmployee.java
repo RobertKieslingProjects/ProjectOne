@@ -54,7 +54,7 @@ public class AddEmployee extends HttpServlet implements Role {
                               request.getParameter ("userid"),
                               request.getParameter ("password"),
                               request.getParameter ("ssn"),
-			      request.getParameter ("email"),
+                              request.getParameter ("email"),
                               role);
         UserDAO.addUser (user);
         request.setAttribute ("userAddedSuccess", "true");

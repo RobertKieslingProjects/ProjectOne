@@ -6,7 +6,7 @@ public class User {
 	private String userid = "";
 	private String password = "";
 	private String SSN = "";
-    private String email = "";
+	private String email = "";
 	private int role;
 	
 	User () {
@@ -27,8 +27,8 @@ public class User {
 	this.userid = userid;
 	this.password = password;
 	this.SSN = SSN;
-	this.email = email;
 	this.role = role;
+	this.email = email;
     }
     String firstName () { return this.firstName; }
     void firstName (String name) { this.firstName = name; }
@@ -40,8 +40,8 @@ public class User {
     void password (String p) { this.password = p; }
     String SSN () { return this.SSN; }
     void SSN (String ssn) { this.SSN = ssn; }
+    String email () { return this.email; }
+    void email (String e) { this.email = e; }
     Integer role () { return this.role; }
     void role (Integer r) { this.role = r; }
-    String email () { return this.email; }
-    void email (String email) { this.email = email; }
 }

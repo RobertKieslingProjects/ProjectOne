@@ -47,8 +47,6 @@ public class Login extends HttpServlet implements Role {
 	switch (u.role ()) {
         case Role.ROLE_ADMIN:
             dispatcher = request.getRequestDispatcher ("/ExpenseAdmin");
-            /* request.setAttribute ("firstName", u.firstName ());
-	       request.setAttribute ("lastName", u.lastName ()); */ /***/
             try {
                 dispatcher.forward (request, response);
             } catch (ServletException e) {
@@ -59,9 +57,6 @@ public class Login extends HttpServlet implements Role {
             break;
         case Role.ROLE_EMPLOYEE:
             dispatcher = request.getRequestDispatcher ("/Expenses");
-            /* request.setAttribute ("firstName", u.firstName ());
-            request.setAttribute ("lastName", u.lastName ());
-            request.setAttribute ("userid", u.userid ()); *//***/
             try {
                 dispatcher.forward (request, response);
             } catch (ServletException e) {
